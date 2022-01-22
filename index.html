@@ -71,6 +71,107 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-bomblab" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/22/bomblab/" class="article-date">
+  <time class="dt-published" datetime="2022-01-22T15:54:42.000Z" itemprop="datePublished">2022-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/01/22/bomblab/">bomblab</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="LAB2-BOMB"><a href="#LAB2-BOMB" class="headerlink" title="LAB2 BOMB"></a>LAB2 BOMB</h1><h2 id="GDB的使用"><a href="#GDB的使用" class="headerlink" title="GDB的使用"></a>GDB的使用</h2><h3 id="查看函数的汇编码"><a href="#查看函数的汇编码" class="headerlink" title="查看函数的汇编码"></a>查看函数的汇编码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">disas phase_1  #显示代码</span><br><span class="line"></span><br><span class="line">info break    #显示断点</span><br><span class="line">b phase_1 #插入断点</span><br><span class="line">next #逐过程</span><br><span class="line">step #逐语句</span><br><span class="line">info registers #查看寄存器</span><br><span class="line">（gdb）enable breakpoints：启用断点</span><br><span class="line"></span><br><span class="line">（gdb）disable breakpoints：禁用断点</span><br></pre></td></tr></table></figure>
+
+<h3 id="x-的使用"><a href="#x-的使用" class="headerlink" title="-x 的使用"></a>-x 的使用</h3><p>可以使用examine命令(简写是x)来查看内存地址中的值。x命令的语法如下所示：</p>
+<p>　　　　x/&lt;n/f/u&gt; <addr></p>
+<p>　　n、f、u是可选的参数。</p>
+<p>　　n是一个正整数，表示需要显示的内存单元的个数，也就是说从当前地址向后显示几个内存单元的内容，一个内存单元的大小由后面的u定义。</p>
+<p>　　f 表示显示的格式，参见下面。如果地址所指的是字符串，那么格式可以是s，如果地十是指令地址，那么格式可以是i。</p>
+<p>　　u 表示从当前地址往后请求的字节数，如果不指定的话，GDB默认是4个bytes。u参数可以用下面的字符来代替，b表示单字节，h表示双字节，w表示四字 节，g表示八字节。当我们指定了字节长度后，GDB会从指内存定的内存地址开始，读写指定字节，并把其当作一个值取出来。</p>
+<p>　　<addr>表示一个内存地址。</p>
+<p>　　注意：严格区分n和u的关系，n表示单元个数，u表示每个单元的大小。</p>
+<p>　　n/f/u三个参数可以一起使用。例如：</p>
+<p>　　命令：x/3uh 0x54320 表示，从内存地址0x54320读取内容，h表示以双字节为一个单位，3表示输出三个单位，u表示按无符号十进制显示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x/s 可以显示一个地址的字符串</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="第一关"><a href="#第一关" class="headerlink" title="第一关"></a>第一关</h2><p>输入指令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disas phase_1</span><br></pre></td></tr></table></figure>
+
+<p>可以得到如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">0x0000000000400ee0 &lt;+0&gt;:	sub    $0x8,%rsp  #压栈必备操作</span><br><span class="line">0x0000000000400ee4 &lt;+4&gt;:	mov    $0x402400,%esi  #立即数</span><br><span class="line">0x0000000000400ee9 &lt;+9&gt;:	callq  0x401338 &lt;strings_not_equal&gt; # 比较函数，这就要和我们输入的字符串进行比较了</span><br><span class="line">0x0000000000400eee &lt;+14&gt;:	test   %eax,%eax</span><br><span class="line">0x0000000000400ef0 &lt;+16&gt;:	je     0x400ef7 &lt;phase_1+23&gt;</span><br><span class="line">0x0000000000400ef2 &lt;+18&gt;:	callq  0x40143a &lt;explode_bomb&gt;</span><br><span class="line">0x0000000000400ef7 &lt;+23&gt;:	add    $0x8,%rsp</span><br><span class="line">0x0000000000400efb &lt;+27&gt;:	retq   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x/s 0x402400 </span><br></pre></td></tr></table></figure>
+
+<p>即可得到字符串</p>
+<p>  “Border relations with Canada have never been better.”</p>
+<h2 id="第二关"><a href="#第二关" class="headerlink" title="第二关"></a>第二关</h2><p>phase_2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">400efc:	55                   	push   %rbp</span><br><span class="line">400efd:	53                   	push   %rbx</span><br><span class="line">400efe:	48 83 ec 28          	sub    $0x28,%rsp</span><br><span class="line">400f02:	48 89 e6             	mov    %rsp,%rsi</span><br><span class="line">400f05:	e8 52 05 00 00       	callq  40145c &lt;read_six_numbers&gt;</span><br><span class="line">400f0a:	83 3c 24 01          	cmpl   $0x1,(%rsp) #与1比较</span><br><span class="line">400f0e:	74 20                	je     400f30 &lt;phase_2+0x34&gt;</span><br><span class="line">400f10:	e8 25 05 00 00       	callq  40143a &lt;explode_bomb&gt;</span><br><span class="line">400f15:	eb 19                	jmp    400f30 &lt;phase_2+0x34&gt;</span><br><span class="line">400f17:	8b 43 fc             	mov    -0x4(%rbx),%eax</span><br><span class="line">400f1a:	01 c0                	add    %eax,%eax  #相当于*2的操作</span><br><span class="line">400f1c:	39 03                	cmp    %eax,(%rbx)</span><br><span class="line">400f1e:	74 05                	je     400f25 &lt;phase_2+0x29&gt;</span><br><span class="line">400f20:	e8 15 05 00 00       	callq  40143a &lt;explode_bomb&gt;</span><br><span class="line">400f25:	48 83 c3 04          	add    $0x4,%rbx</span><br><span class="line">400f29:	48 39 eb             	cmp    %rbp,%rbx</span><br><span class="line">400f2c:	75 e9                	jne    400f17 &lt;phase_2+0x1b&gt;</span><br><span class="line">400f2e:	eb 0c                	jmp    400f3c &lt;phase_2+0x40&gt;</span><br><span class="line">400f30:	48 8d 5c 24 04       	lea    0x4(%rsp),%rbx  </span><br><span class="line">400f35:	48 8d 6c 24 18       	lea    0x18(%rsp),%rbp</span><br><span class="line">400f3a:	eb db                	jmp    400f17 &lt;phase_2+0x1b&gt;</span><br><span class="line">400f3c:	48 83 c4 28          	add    $0x28,%rsp</span><br><span class="line">400f40:	5b                   	pop    %rbx</span><br><span class="line">400f41:	5d                   	pop    %rbp</span><br><span class="line">400f42:	c3                   	retq   </span><br></pre></td></tr></table></figure>
+
+<p>read_six_numbers</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">0x000000000040145c &lt;+0&gt;:	sub    $0x18,%rsp</span><br><span class="line">0x0000000000401460 &lt;+4&gt;:	mov    %rsi,%rdx</span><br><span class="line">0x0000000000401463 &lt;+7&gt;:	lea    0x4(%rsi),%rcx</span><br><span class="line">0x0000000000401467 &lt;+11&gt;:	lea    0x14(%rsi),%rax  #都是输入数字的操作</span><br><span class="line">0x000000000040146b &lt;+15&gt;:	mov    %rax,0x8(%rsp)</span><br><span class="line">0x0000000000401470 &lt;+20&gt;:	lea    0x10(%rsi),%rax</span><br><span class="line">0x0000000000401474 &lt;+24&gt;:	mov    %rax,(%rsp)</span><br><span class="line">0x0000000000401478 &lt;+28&gt;:	lea    0xc(%rsi),%r9</span><br><span class="line">0x000000000040147c &lt;+32&gt;:	lea    0x8(%rsi),%r8</span><br><span class="line">0x0000000000401480 &lt;+36&gt;:	mov    $0x4025c3,%esi</span><br><span class="line">0x0000000000401485 &lt;+41&gt;:	mov    $0x0,%eax</span><br><span class="line">0x000000000040148a &lt;+46&gt;:	callq  0x400bf0 &lt;__isoc99_sscanf@plt&gt;</span><br><span class="line">0x000000000040148f &lt;+51&gt;:	cmp    $0x5,%eax</span><br><span class="line">0x0000000000401492 &lt;+54&gt;:	jg     0x401499 &lt;read_six_numbers+61&gt;</span><br><span class="line">0x0000000000401494 &lt;+56&gt;:	callq  0x40143a &lt;explode_bomb&gt;</span><br><span class="line">0x0000000000401499 &lt;+61&gt;:	add    $0x18,%rsp</span><br><span class="line">0x000000000040149d &lt;+65&gt;:	retq   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>1 2 4 8 16 32</p>
+<h2 id="第三关"><a href="#第三关" class="headerlink" title="第三关"></a>第三关</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">0x0000000000400f43 &lt;+0&gt;:	sub    $0x18,%rsp</span><br><span class="line">0x0000000000400f47 &lt;+4&gt;:	lea    0xc(%rsp),%rcx  #输入第一个数的地址</span><br><span class="line">0x0000000000400f4c &lt;+9&gt;:	lea    0x8(%rsp),%rdx  #输入第二个数的地址</span><br><span class="line">0x0000000000400f51 &lt;+14&gt;:	mov    $0x4025cf,%esi</span><br><span class="line">0x0000000000400f56 &lt;+19&gt;:	mov    $0x0,%eax</span><br><span class="line">0x0000000000400f5b &lt;+24&gt;:	callq  0x400bf0 &lt;__isoc99_sscanf@plt&gt;</span><br><span class="line">0x0000000000400f60 &lt;+29&gt;:	cmp    $0x1,%eax   #比较参数</span><br><span class="line">0x0000000000400f63 &lt;+32&gt;:	jg     0x400f6a &lt;phase_3+39&gt; </span><br><span class="line">0x0000000000400f65 &lt;+34&gt;:	callq  0x40143a &lt;explode_bomb&gt;</span><br><span class="line">0x0000000000400f6a &lt;+39&gt;:	cmpl   $0x7,0x8(%rsp) #第一个数要&lt;7</span><br><span class="line">0x0000000000400f6f &lt;+44&gt;:	ja     0x400fad &lt;phase_3+106&gt;</span><br><span class="line">0x0000000000400f71 &lt;+46&gt;:	mov    0x8(%rsp),%eax #把第一个参数传入eax（rax）</span><br><span class="line">0x0000000000400f75 &lt;+50&gt;:	jmpq   *0x402470(,%rax,8) #通过传入的参数跳转</span><br><span class="line">0x0000000000400f7c &lt;+57&gt;:	mov    $0xcf,%eax</span><br><span class="line">0x0000000000400f81 &lt;+62&gt;:	jmp    0x400fbe &lt;phase_3+123&gt;</span><br><span class="line">0x0000000000400f83 &lt;+64&gt;:	mov    $0x2c3,%eax</span><br><span class="line">0x0000000000400f88 &lt;+69&gt;:	jmp    0x400fbe &lt;phase_3+123&gt;</span><br><span class="line">0x0000000000400f8a &lt;+71&gt;:	mov    $0x100,%eax</span><br><span class="line">0x0000000000400f8f &lt;+76&gt;:	jmp    0x400fbe &lt;phase_3+123&gt;</span><br><span class="line">0x0000000000400f91 &lt;+78&gt;:	mov    $0x185,%eax</span><br><span class="line">0x0000000000400f96 &lt;+83&gt;:	jmp    0x400fbe &lt;phase_3+123&gt;</span><br><span class="line">0x0000000000400f98 &lt;+85&gt;:	mov    $0xce,%eax</span><br><span class="line">0x0000000000400f9d &lt;+90&gt;:	jmp    0x400fbe &lt;phase_3+123&gt;</span><br><span class="line">0x0000000000400f9f &lt;+92&gt;:	mov    $0x2aa,%eax</span><br><span class="line">0x0000000000400fa4 &lt;+97&gt;:	jmp    0x400fbe &lt;phase_3+123&gt;</span><br><span class="line">0x0000000000400fa6 &lt;+99&gt;:	mov    $0x147,%eax</span><br><span class="line">0x0000000000400fab &lt;+104&gt;:	jmp    0x400fbe &lt;phase_3+123&gt;</span><br><span class="line">0x0000000000400fad &lt;+106&gt;:	callq  0x40143a &lt;explode_bomb&gt;</span><br><span class="line">0x0000000000400fb2 &lt;+111&gt;:	mov    $0x0,%eax</span><br><span class="line">0x0000000000400fb7 &lt;+116&gt;:	jmp    0x400fbe &lt;phase_3+123&gt;</span><br><span class="line">0x0000000000400fb9 &lt;+118&gt;:	mov    $0x137,%eax</span><br><span class="line">0x0000000000400fbe &lt;+123&gt;:	cmp    0xc(%rsp),%eax  #eax与第二个参数比较，这里选择2，所以为707</span><br><span class="line">0x0000000000400fc2 &lt;+127&gt;:	je     0x400fc9 &lt;phase_3+134&gt;</span><br><span class="line">0x0000000000400fc4 &lt;+129&gt;:	callq  0x40143a &lt;explode_bomb&gt;</span><br><span class="line">0x0000000000400fc9 &lt;+134&gt;:	add    $0x18,%rsp</span><br><span class="line">0x0000000000400fcd &lt;+138&gt;:	retq  </span><br></pre></td></tr></table></figure>
+
+<p>1、可以通过如下命令查看输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(gdb)x/s 0x4025cf</span><br><span class="line">0x4025cf:	&quot;%d %d&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>2、到了跳转命令后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jmpq   *0x402470(,%rax,8)</span><br></pre></td></tr></table></figure>
+
+<p>3、查看该命令跳转到哪，以输入2为例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(gdb) x *0x402480</span><br><span class="line">0x400f83 &lt;phase_3+64&gt;:	0x0002c3b8</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>4、跳转到+64的位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x0000000000400f83 &lt;+64&gt;:	mov    $0x2c3,%eax</span><br></pre></td></tr></table></figure>
+
+<p>5、跳转到+123的位置进行比较</p>
+<p>2 707</p>
+<p>成功通过</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/22/bomblab/" data-id="ckyq0jwtl0000xoug9mdbdtyy" data-title="bomblab" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-CSAPP-LAB1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/01/14/CSAPP-LAB1/" class="article-date">
@@ -93,7 +194,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="cCSAPP"><a href="#cCSAPP" class="headerlink" title="cCSAPP"></a>cCSAPP</h1><h2 id="LAB1"><a href="#LAB1" class="headerlink" title="LAB1"></a>LAB1</h2><p>注：<strong>在Makefile中要把-m32改为-m64</strong></p>
+        <h1 id="CSAPP"><a href="#CSAPP" class="headerlink" title="CSAPP"></a>CSAPP</h1><h2 id="LAB1"><a href="#LAB1" class="headerlink" title="LAB1"></a>LAB1</h2><p>注：<strong>在Makefile中要把-m32改为-m64</strong></p>
 <h3 id="1、bitAnd-int-int"><a href="#1、bitAnd-int-int" class="headerlink" title="1、bitAnd(int, int);"></a>1、bitAnd(int, int);</h3> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bitAnd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">  	<span class="keyword">unsigned</span> z;</span><br><span class="line">	z=~((~x)|(~y));</span><br><span class="line">	<span class="keyword">return</span> z;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="2、getByte-int-x-int-n"><a href="#2、getByte-int-x-int-n" class="headerlink" title="2、getByte(int x, int n)"></a>2、getByte(int x, int n)</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> * <span class="function"><span class="keyword">int</span> <span class="title">getByte</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> (x &gt;&gt; (n &lt;&lt; <span class="number">3</span>)) &amp; <span class="number">0xFF</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -243,6 +344,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/01/22/bomblab/">bomblab</a>
+          </li>
         
           <li>
             <a href="/2022/01/14/CSAPP-LAB1/">CSAPP LAB1</a>
