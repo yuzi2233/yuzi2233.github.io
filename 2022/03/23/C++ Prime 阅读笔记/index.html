@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     
-    <title>Hexo</title>
+    <title>WOW!</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -14,29 +14,29 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="description" content="C++ Prime 阅读笔记第二章  变量和基本类型1、引用和指针的区别：引用并非一个对象，一旦定义了引用，就无法令其再绑定到另外的对象，之后每次使用这个引用都是访问它最初绑定的哪个对象；指针和它存放的地址之间就没有这种限制了，和其他任何变量（除了引用）一样，给指针赋值就是令它存放一个新的地址，从而指向一个新的对象。 123456789101112#include &lt;iostream&gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/yuzi2233/yuzi2233.github.io/2022/03/23/C++%20Prime%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:title" content="WOW!">
+<meta property="og:url" content="https://yuzi2233.github.io/2022/03/23/C++%20Prime%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="WOW!">
 <meta property="og:description" content="C++ Prime 阅读笔记第二章  变量和基本类型1、引用和指针的区别：引用并非一个对象，一旦定义了引用，就无法令其再绑定到另外的对象，之后每次使用这个引用都是访问它最初绑定的哪个对象；指针和它存放的地址之间就没有这种限制了，和其他任何变量（除了引用）一样，给指针赋值就是令它存放一个新的地址，从而指向一个新的对象。 123456789101112#include &lt;iostream&gt;">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20220325183808499.png">
-<meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20220325194227494.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20220325183808499.png">
+<meta property="og:image" content="c:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20220325194227494.png">
 <meta property="article:published_time" content="2022-03-23T10:45:21.937Z">
 <meta property="article:modified_time" content="2022-04-06T08:37:39.993Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20220325183808499.png">
+<meta name="twitter:image" content="c:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20220325183808499.png">
     
-<link rel="stylesheet" href="/yuzi2233/yuzi2233.github.io/lib/fancybox/fancybox.css">
-<link rel="stylesheet" href="/yuzi2233/yuzi2233.github.io/lib/justifiedGallery/justifiedGallery.min.css">
-<link rel="stylesheet" href="/yuzi2233/yuzi2233.github.io/lib/mdui_043tiny/mdui.css">
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/justifiedGallery/justifiedGallery.min.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/yuzi2233/yuzi2233.github.io/lib/iconfont/iconfont.css?v=1672216319965">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1672217999644">
     
-    <link rel="stylesheet" href="/yuzi2233/yuzi2233.github.io/css/style.css?v=1672216319965">
+    <link rel="stylesheet" href="/css/style.css?v=1672217999644">
     
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body class="mdui-drawer-body-left">
     
@@ -47,39 +47,39 @@
                 <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
                 <div class="mdui-toolbar-spacer"></div>
                 <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-                <a href="/yuzi2233/yuzi2233.github.io/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe"></a>
+                <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe"></a>
             </div>
         </div>
     </div>
     <div id="nexmoe-header">
         <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
-        <a href="/yuzi2233/yuzi2233.github.io/" title="John Doe">
+        <a href="/" title="John Doe">
             <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe" alt="John Doe">
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>Articles</span>16</div>
-        <div><span>Tags</span>0</div>
-        <div><span>Categories</span>0</div>
+        <div><span>文章</span>16</div>
+        <div><span>标签</span>0</div>
+        <div><span>分类</span>0</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/yuzi2233/yuzi2233.github.io/" title="回到首页">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
             <i class="mdui-list-item-icon nexmoefont icon-home"></i>
             <div class="mdui-list-item-content">
                 回到首页
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/yuzi2233/yuzi2233.github.io/about.html" title="关于博客">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
             <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
             <div class="mdui-list-item-content">
                 关于博客
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/yuzi2233/yuzi2233.github.io/PY.html" title="我的朋友">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
             <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
             <div class="mdui-list-item-content">
                 我的朋友
@@ -93,7 +93,7 @@
     <div class="nexmoe-widget nexmoe-search">
          
             <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
-                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+                <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
             </form>
          
     </div>
@@ -120,7 +120,7 @@
 
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">
-      Hitokoto
+      一言
     </h3>
     <div class="nexmoe-widget">
       <ul class="hitokoto-box">
@@ -193,7 +193,7 @@
 </div>
 
       <h1 id="C-Prime-阅读笔记"><a href="#C-Prime-阅读笔记" class="headerlink" title="C++ Prime 阅读笔记"></a>C++ Prime 阅读笔记</h1><h2 id="第二章-变量和基本类型"><a href="#第二章-变量和基本类型" class="headerlink" title="第二章  变量和基本类型"></a>第二章  变量和基本类型</h2><p>1、<strong>引用和指针的区别</strong>：引用并非一个对象，一旦定义了引用，就无法令其再绑定到另外的对象，之后每次使用这个引用都是访问它最初绑定的哪个对象；指针和它存放的地址之间就没有这种限制了，和其他任何变量（除了引用）一样，给指针赋值就是令它存放一个新的地址，从而指向一个新的对象。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> *p=&amp;i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;*p=%d\n&quot;</span>,*p);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;p=%d\n&quot;</span>,p);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> *p=&amp;i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;*p=%d\n&quot;</span>,*p);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;p=%d\n&quot;</span>,p);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>输出：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*p=1</span><br><span class="line">p=6422036</span><br><span class="line">Hello, World!</span><br></pre></td></tr></table></figure>
@@ -204,10 +204,10 @@
 <p>常量指针：指向的地址不能变</p>
 <p>顶层指针：指针本身是一个常量</p>
 <p>底层指针：指针所指的对象是一个常量（所指的内容可以变可变）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;  <span class="comment">//</span></span><br><span class="line">    <span class="keyword">int</span> *<span class="keyword">const</span> p1 =&amp;i;  <span class="comment">//顶层  int 在前</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> ci =<span class="number">42</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> j =<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> *p2 =&amp;ci; <span class="comment">//底层 const int    *p为指向的值是const，自己可变</span></span><br><span class="line">     p2=&amp;j;    <span class="comment">//可变，但不能通过p2改变ci的值</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> *<span class="keyword">const</span> p3 =p2;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> &amp;r=ci;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">1</span>;  <span class="comment">//</span></span><br><span class="line">    <span class="type">int</span> *<span class="type">const</span> p1 =&amp;i;  <span class="comment">//顶层  int 在前</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> ci =<span class="number">42</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> j =<span class="number">2</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> *p2 =&amp;ci; <span class="comment">//底层 const int    *p为指向的值是const，自己可变</span></span><br><span class="line">     p2=&amp;j;    <span class="comment">//可变，但不能通过p2改变ci的值</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> *<span class="type">const</span> p3 =p2;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> &amp;r=ci;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>3、指向二维数组的指针</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> array1[<span class="number">2</span>][<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> (*point)[<span class="number">2</span>] =array1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> array1[<span class="number">2</span>][<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line"><span class="type">int</span> (*point)[<span class="number">2</span>] =array1;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -217,7 +217,7 @@
 <p>2、<strong>string 字符相加：</strong>+号两边必须有一个是string类型</p>
 <p>3、字符串处理：</p>
 <p><img data-fancybox="gallery" src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20220325183808499.png" alt="image-20220325183808499" data-caption="image-20220325183808499" loading="lazy"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="string">&quot;Hello,World!&quot;</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;c :s)  <span class="comment">// &amp;别名，可以直接更改</span></span><br><span class="line">    &#123;</span><br><span class="line">        c= <span class="built_in">toupper</span>(c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt;s &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> <span class="title function_">s</span><span class="params">(<span class="string">&quot;Hello,World!&quot;</span>)</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;c :s)  <span class="comment">// &amp;别名，可以直接更改</span></span><br><span class="line">    &#123;</span><br><span class="line">        c= <span class="built_in">toupper</span>(c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt;s &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -227,12 +227,12 @@
 <p>​                      但凡使用了迭代器的循环体，都不要该改变容器的值</p>
 <p>5、数组内置的索引值是有符号数，而vector和string是无符号数。</p>
 <p>6、vector的数组</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">ivec</span><span class="params">(begin(int_arr),end(int_arr))</span></span>;</span><br><span class="line"><span class="comment">//把数组之间的元素放入voctor;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; <span class="title function_">ivec</span><span class="params">(begin(int_arr),end(int_arr))</span>;</span><br><span class="line"><span class="comment">//把数组之间的元素放入voctor;</span></span><br></pre></td></tr></table></figure>
 
 <p>7、多维数组循环</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> array1[<span class="number">2</span>][<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> array1[<span class="number">2</span>][<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>  &amp;raw:array1)  <span class="comment">//要引用</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:raw)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">const</span> <span class="keyword">auto</span>  &amp;raw:array1)  <span class="comment">//要引用</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:raw)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> p=begin(array1);p!=end(array1);++p)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>  q= begin(*p);q!=end(*p);q++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;*q&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -243,12 +243,12 @@
 <h2 id="第四章、表达式"><a href="#第四章、表达式" class="headerlink" title="第四章、表达式"></a>第四章、表达式</h2><p><strong>1、左值右值</strong>： 左值可以理解为在内存中的，可以赋值、可以经常赋值； 右值是在寄存器中的值</p>
 <p><strong>2、递增、递减运算符：</strong></p>
 <p>​    （1) </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i =<span class="number">0</span>,j;</span><br><span class="line">j=++i;       <span class="comment">// j = 1 ,i = 1 ;前置版本得到递增之后的值</span></span><br><span class="line">j=i++;		<span class="comment">//  j= 1 , i=2 ;后置版本得到递增之前的值</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i =<span class="number">0</span>,j;</span><br><span class="line">j=++i;       <span class="comment">// j = 1 ,i = 1 ;前置版本得到递增之后的值</span></span><br><span class="line">j=i++;		<span class="comment">//  j= 1 , i=2 ;后置版本得到递增之前的值</span></span><br></pre></td></tr></table></figure>
 
 <p>​      (2) 建议养成使用前置版本的习惯，这样不仅不需要担心性能问题，而且更重要的是写出的代码会更符合变成初衷</p>
 <p>​    （3）</p>
 <h2 id="第六章、函数参数"><a href="#第六章、函数参数" class="headerlink" title="第六章、函数参数"></a>第六章、函数参数</h2><p>1、传入数组大小：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> j[]=&#123;<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line">test(j,end(j)-begin(j));</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> j[]=&#123;<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line">test(j,end(j)-begin(j));</span><br></pre></td></tr></table></figure>
 
 
 
@@ -260,8 +260,8 @@
   
       
     <div class="nexmoe-post-copyright">
-        <strong>Author：</strong>John Doe<br>
-        <strong>Link：</strong><a href="https://github.com/yuzi2233/yuzi2233.github.io/2022/03/23/C++%20Prime%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="https:&#x2F;&#x2F;github.com&#x2F;yuzi2233&#x2F;yuzi2233.github.io&#x2F;2022&#x2F;03&#x2F;23&#x2F;C++%20Prime%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;github.com&#x2F;yuzi2233&#x2F;yuzi2233.github.io&#x2F;2022&#x2F;03&#x2F;23&#x2F;C++%20Prime%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0&#x2F;</a><br>
+        <strong>本文作者：</strong>John Doe<br>
+        <strong>本文链接：</strong><a href="https://yuzi2233.github.io/2022/03/23/C++%20Prime%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="https:&#x2F;&#x2F;yuzi2233.github.io&#x2F;2022&#x2F;03&#x2F;23&#x2F;C++%20Prime%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;yuzi2233.github.io&#x2F;2022&#x2F;03&#x2F;23&#x2F;C++%20Prime%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -313,7 +313,7 @@
         <div class="search-container">
             <div class="search-header">
                 <div class="search-input-container">
-                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                    <input class="search-input" type="text" placeholder="搜索" oninput="sinput();">
                 </div>
                 <a class="search-close" onclick="sclose();">×</a>
             </div>
@@ -322,15 +322,15 @@
     </div>
 
     
-<script src="/yuzi2233/yuzi2233.github.io/lib/mdui_043tiny/mdui.js"></script>
-<script src="/yuzi2233/yuzi2233.github.io/lib/jquery.min.js"></script>
-<script src="/yuzi2233/yuzi2233.github.io/lib/justifiedGallery/jquery.justifiedGallery.min.js"></script>
-<script src="/yuzi2233/yuzi2233.github.io/lib/fancybox/fancybox.umd.js"></script>
+<script src="/lib/mdui_043tiny/mdui.js"></script>
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/justifiedGallery/jquery.justifiedGallery.min.js"></script>
+<script src="/lib/fancybox/fancybox.umd.js"></script>
 
 
  
 
-<script async src="/yuzi2233/yuzi2233.github.io/js/app.js?v=1672216319966"></script>
+<script async src="/js/app.js?v=1672217999646"></script>
 
 
 
