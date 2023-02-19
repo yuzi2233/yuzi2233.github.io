@@ -4,7 +4,7 @@
 
 <head>
     
-    <title>昨夜星辰恰似你</title>
+    <title>NLP学习 - 昨夜星辰恰似你</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,26 +12,29 @@
     
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="description" content="中医命名实体识别的改进1、词典树建立中医文本词典树，其中第一个字建立hash，之后全部用数组实现[65535+1]; 2、   字符数 词语总数 总词频 平均词长      5116 325 501 2.2">
+    <meta name="description" content="NLP学习概率图模型​    概率图模型就是一类用图来表达变量相关关系的概率模型，通常用一个节点表示一个或一组随机变量节点间的边表示变量间的概率关系，分为有向无环图 (贝叶斯网)+ 无向图模型 (马尔科夫网)。  HMM（隐马尔可夫链）:，y1，y2…为不可观测到的数据，x1，x2为可观测到的数据。透过现象看本质，比如y为天气的情况，x为小卖部卖出雪糕的数量。可以通过卖出雪糕的数量猜测天气状况，但">
 <meta property="og:type" content="article">
-<meta property="og:title" content="昨夜星辰恰似你">
-<meta property="og:url" content="https://yuzi2233.github.io/2023/01/13/%E4%B8%AD%E5%8C%BB%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E7%9A%84%E6%94%B9%E8%BF%9B/index.html">
+<meta property="og:title" content="NLP学习">
+<meta property="og:url" content="https://yuzi2233.github.io/2022/06/13/%E4%B8%AD%E5%8C%BB%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E7%9A%84%E6%94%B9%E8%BF%9B/index.html">
 <meta property="og:site_name" content="昨夜星辰恰似你">
-<meta property="og:description" content="中医命名实体识别的改进1、词典树建立中医文本词典树，其中第一个字建立hash，之后全部用数组实现[65535+1]; 2、   字符数 词语总数 总词频 平均词长      5116 325 501 2.2">
+<meta property="og:description" content="NLP学习概率图模型​    概率图模型就是一类用图来表达变量相关关系的概率模型，通常用一个节点表示一个或一组随机变量节点间的边表示变量间的概率关系，分为有向无环图 (贝叶斯网)+ 无向图模型 (马尔科夫网)。  HMM（隐马尔可夫链）:，y1，y2…为不可观测到的数据，x1，x2为可观测到的数据。透过现象看本质，比如y为天气的情况，x为小卖部卖出雪糕的数量。可以通过卖出雪糕的数量猜测天气状况，但">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-12T16:00:18.848Z">
-<meta property="article:modified_time" content="2023-02-04T17:17:24.117Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuzi2233/CDN/main/image-20230219155648225.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuzi2233/CDN/main/image-20230219171401365.png">
+<meta property="article:published_time" content="2022-06-13T01:05:42.000Z">
+<meta property="article:modified_time" content="2023-02-19T12:06:28.275Z">
 <meta property="article:author" content="GuoYu_LLR">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yuzi2233/CDN/main/image-20230219155648225.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/justifiedGallery/justifiedGallery.min.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1676632507168">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1676809400876">
     
-    <link rel="stylesheet" href="/css/style.css?v=1676632507168">
+    <link rel="stylesheet" href="/css/style.css?v=1676809400876">
     
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -57,8 +60,8 @@
     </div>
     <div class="nexmoe-count">
         <div><span>文章</span>23</div>
-        <div><span>标签</span>0</div>
-        <div><span>分类</span>2</div>
+        <div><span>标签</span>1</div>
+        <div><span>分类</span>4</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -130,8 +133,22 @@
         
 
         <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Study/NLP/">NLP</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
           <a class="category-list-link" href="/categories/Study/">Study</a>
-          <span class="category-list-count">2</span>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/hello/">hello!!</a>
+          <span class="category-list-count">1</span>
         </li>
 
         
@@ -143,6 +160,13 @@
 
     
     
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/test/" style="font-size: 10px;">test</a>
+    </div>
+    
+  </div>
+
     
     <!-- 一言 -->
 
@@ -203,24 +227,41 @@
 
   <article>
       
-          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
-              <img data-fancybox="gallery" src="https://cdn.jsdelivr.net/gh/yuzi2233/CDN/Deep/2023-02-05%20164923(50).jpg" alt="" loading="lazy">
-              <h1></h1>
+          <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
+              <img src="https://cdn.jsdelivr.net/gh/yuzi2233/CDN/Deep/2023-02-05%20164923(50).jpg" alt="NLP学习" loading="lazy">
+              <h1>NLP学习</h1>
           </div>
       
       
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月13日</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年06月13日</a>
 </div>
 
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     
-        <a><i class="nexmoefont icon-areachart"></i>约64字</a>
-        <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要1分钟</a>
+        <a><i class="nexmoefont icon-areachart"></i>约789字</a>
+        <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要2分钟</a>
     
 </div>
 
-      <h1 id="中医命名实体识别的改进"><a href="#中医命名实体识别的改进" class="headerlink" title="中医命名实体识别的改进"></a>中医命名实体识别的改进</h1><h2 id="1、词典树"><a href="#1、词典树" class="headerlink" title="1、词典树"></a>1、词典树</h2><p>建立中医文本词典树，其中第一个字建立hash，之后全部用数组实现[65535+1];</p>
+      <h1 id="NLP学习"><a href="#NLP学习" class="headerlink" title="NLP学习"></a>NLP学习</h1><h2 id="概率图模型"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型</h2><p>​    概率图模型就是一类用图来表达变量相关关系的概率模型，通常用一个节点表示一个或一组随机变量节点间的边表示变量间的概率关系，分为有向无环图 (贝叶斯网)+ 无向图模型 (马尔科夫网)。</p>
+<p><img data-fancybox="gallery" src="https://raw.githubusercontent.com/yuzi2233/CDN/main/image-20230219155648225.png" alt="image-20230219155648225" data-caption="image-20230219155648225" loading="lazy"></p>
+<p><strong>HMM（隐马尔可夫链）</strong>:，y1，y2…为不可观测到的数据，x1，x2为可观测到的数据。透过现象看本质，比如y为天气的情况，x为小卖部卖出雪糕的数量。可以通过卖出雪糕的数量猜测天气状况，但是卖出雪糕的数量是由天气决定的</p>
+<p>**CRF(条件随机场)**：实际上CRF就是序列版本的逻辑回归 (logistic regression) 。正如逻辑回归是分类问题的对数线性模型，CRF是序列标注问题的对数线性模型。</p>
+<p><strong>HMM  VS  CRF</strong>:CRF更加强大:CRF可以为任何HMM能够建模的事物建模，甚至更多CRF可以定义更加广泛的特征集而HMM在本质上必然是局部的，而CRF就可以使用更加全局的特征;CRF可以有任意权重值;HMM的概率值必须满足特定的约束</p>
+<p><strong>RNN</strong>:有梯度消失与梯度爆炸的隐患（0.99^100与1.01^100的故事）</p>
+<p><strong>LSTM</strong>:引入门机制，LSTM在每个t时刻都选择性地改变记忆，从而有效解决RNN的长距离依赖</p>
+<h2 id="方法流程"><a href="#方法流程" class="headerlink" title="方法流程"></a>方法流程</h2><h3 id="1、Word-Embedding"><a href="#1、Word-Embedding" class="headerlink" title="1、Word Embedding"></a>1、Word Embedding</h3><p><strong>方法流程</strong><br>    1.将一个含有n个词的句子记作: x = (x1,x2,….xn)<br>    2.利用预训练的embedding矩阵将每个字映射为低维稠密的向量<br><strong>重点理解:</strong><br>    1.预训练词向量为何可以提高模型泛化能力?<strong>(词相近)</strong><br>    2.有的在词向量后加Dropout的作用是什么? 效果如何?<strong>（特征集成）</strong></p>
+<h3 id="2、BiLSTM提取文本特征"><a href="#2、BiLSTM提取文本特征" class="headerlink" title="2、BiLSTM提取文本特征"></a>2、BiLSTM提取文本特征</h3><p><strong>方法流程</strong><br>    1.将一个句子各个字的Embedding序列作为双向LSTM各个时间步的输入</p>
+<p>​    2.将正反向输出的隐状态进行拼接，得到完整的隐状态序列</p>
+<h3 id="3、得到P矩阵"><a href="#3、得到P矩阵" class="headerlink" title="3、得到P矩阵"></a>3、得到P矩阵</h3><p>发射分数</p>
+<h3 id="4、为什么要加crf"><a href="#4、为什么要加crf" class="headerlink" title="4、为什么要加crf"></a>4、为什么要加crf</h3><p>规范LSTM网络输出，防止出现非法的标注（前后是有依赖的）</p>
+<p><strong>转移分数</strong>：</p>
+<p>来自CRF层可以学到的转移矩阵转移矩阵是BiLSTM-CRF模型的一个参数。可随机初始化转移矩阵的分数，然后在训练中更新。</p>
+<p><img data-fancybox="gallery" src="https://raw.githubusercontent.com/yuzi2233/CDN/main/image-20230219171401365.png" alt="image-20230219171401365" data-caption="image-20230219171401365" loading="lazy"></p>
+<h3 id="5、最终结果计算"><a href="#5、最终结果计算" class="headerlink" title="5、最终结果计算"></a>5、最终结果计算</h3><p>Sorce=发射分数+转移分数</p>
+<p><strong>维特比解码</strong>：动态规划的一种思想，可以使时间复杂度为：T*(N^2)  (穷举法为T^N)</p>
+<h2 id="1、词典树"><a href="#1、词典树" class="headerlink" title="1、词典树"></a>1、词典树</h2><p>建立中医文本词典树，其中第一个字建立hash，之后全部用数组实现[65535+1];</p>
 <h2 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h2><table>
 <thead>
 <tr>
@@ -241,6 +282,10 @@
 <td></td>
 </tr>
 </tbody></table>
+<h2 id="3、词典特征"><a href="#3、词典特征" class="headerlink" title="3、词典特征"></a>3、词典特征</h2><p><strong>word_B</strong>:遂,必,仍,若,则,其,其人</p>
+<p><strong>word_A</strong>:者,反</p>
+<p><strong>word_C</strong>:脉,寸,尺,关,浮,迟,数,滑,长,短,洪,微,紧缓,弦,濡,细,促,大,证,续,颇，多,但,遂、必当,未,不,无,如,状,象,作，日</p>
+<p>**word_P:或,而</p>
 
   </article>
 
@@ -248,7 +293,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>GuoYu_LLR<br>
-        <strong>本文链接：</strong><a href="https://yuzi2233.github.io/2023/01/13/%E4%B8%AD%E5%8C%BB%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E7%9A%84%E6%94%B9%E8%BF%9B/" title="https:&#x2F;&#x2F;yuzi2233.github.io&#x2F;2023&#x2F;01&#x2F;13&#x2F;%E4%B8%AD%E5%8C%BB%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E7%9A%84%E6%94%B9%E8%BF%9B&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;yuzi2233.github.io&#x2F;2023&#x2F;01&#x2F;13&#x2F;%E4%B8%AD%E5%8C%BB%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E7%9A%84%E6%94%B9%E8%BF%9B&#x2F;</a><br>
+        <strong>本文链接：</strong><a href="https://yuzi2233.github.io/2022/06/13/%E4%B8%AD%E5%8C%BB%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E7%9A%84%E6%94%B9%E8%BF%9B/" title="https:&#x2F;&#x2F;yuzi2233.github.io&#x2F;2022&#x2F;06&#x2F;13&#x2F;%E4%B8%AD%E5%8C%BB%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E7%9A%84%E6%94%B9%E8%BF%9B&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;yuzi2233.github.io&#x2F;2022&#x2F;06&#x2F;13&#x2F;%E4%B8%AD%E5%8C%BB%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E7%9A%84%E6%94%B9%E8%BF%9B&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -258,6 +303,8 @@
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/Study/">Study</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/Study/NLP/">NLP</a>
     
     
 </div>
@@ -317,7 +364,7 @@
 
  
 
-<script async src="/js/app.js?v=1676632507169"></script>
+<script async src="/js/app.js?v=1676809400877"></script>
 
 
 
